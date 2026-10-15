@@ -4,11 +4,14 @@ FastAPI application with database initialization, CORS, Swagger UI documentation
 """
 
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from backend.app.config import settings
 from backend.app.database import init_db, SessionLocal
 from backend.app.seed.seed_data import seed_database
+
 from backend.app.routers import (
     health_router,
     student_router,
@@ -26,14 +29,14 @@ from backend.app.routers import (
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
-    Application lifespan handler:
-    Initializes database schema and ensures idempotent seeding on startup.
+    Initialize database tables and seed initial application data.
     """
-    # Initialize tables
+    # Initialize database tables
     init_db()
 
     # Seed syllabus data and prototype student
     db = SessionLocal()
+
     try:
         seed_database(db)
     except Exception as e:
@@ -46,24 +49,35 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
-    description="Full-stack educational intelligence platform with syllabus management, progress tracking, study sessions, quizzes, exams, study plans, and machine learning exam score predictions.",
+    description=(
+        "Full-stack educational intelligence platform with syllabus "
+        "management, progress tracking, study sessions, quizzes, exams, "
+        "study plans, and machine learning exam score predictions."
+    ),
     version=settings.VERSION,
     lifespan=lifespan,
     docs_url="/docs",
-    redoc_url="/redoc"
+    redoc_url="/redoc",
 )
 
-# Enable CORS for React Vite frontend and development servers
+
+# CORS configuration for the deployed frontend and local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS if settings.CORS_ORIGINS else ["*"],
-    allow_origin_regex=r"http://(localhost|127\.0\.0\.1)(:\d+)?",
+    allow_origins=[
+        "https://study-tracker-jrs9.vercel.app",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Register routers
+
+# Register API routers
 app.include_router(health_router)
 app.include_router(student_router)
 app.include_router(subjects_router)
@@ -76,8 +90,17 @@ app.include_router(predictions_router)
 app.include_router(tutor_router)
 
 
-
 if __name__ == "__main__":
     import uvicorn
-    print(f"Starting StudySense AI Backend on http://{settings.HOST}:{settings.PORT} ...")
-    uvicorn.run("backend.app.main:app", host=settings.HOST, port=settings.PORT, reload=True)
+
+    print(
+        f"Starting StudySense AI Backend on "
+        f"http://{settings.HOST}:{settings.PORT} ..."
+    )
+
+    uvicorn.run(
+        "backend.app.main:app",
+        host=settings.HOST,
+        port=settings.PORT,
+        reload=True,
+    )
