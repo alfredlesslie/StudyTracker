@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # StudySense AI
 
 An intelligent full-stack learning platform for KTU Semester V Computer Science students featuring AI-powered tutoring, active focus sessions, adaptive quizzes, study planning, exam countdowns, and supervised machine learning exam score predictions.
@@ -53,3 +54,7 @@ Run frontend build verification:
 ```bash
 npm run build
 ```
+=======
+# StudyTracker
+AI-powered study tracker with personalized learning and exam preparation.
+>>>>>>> cf9a654ffd196d6df88db7d7a41fccd554ff5373
