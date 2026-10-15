@@ -1,0 +1,5 @@
+model,train_mae,train_rmse,train_r2,test_mae,test_rmse,test_r2,cv_mae,cv_rmse,cv_r2,overfitting_detected
+Baseline (Mean),14.016,19.211,0.0,14.694,19.74,-0.0082,14.016,19.211,0.0,No
+Linear Regression,4.581,7.422,0.8507,4.581,8.334,0.8203,4.668,7.538,0.8395,No
+Decision Tree,0.538,1.464,0.9942,5.283,9.938,0.7445,5.403,9.964,0.7105,Yes (Train R² >> Test R²)
+Random Forest,1.888,2.972,0.9761,5.019,8.421,0.8166,4.531,7.433,0.8367,Yes (Train R² >> Test R²)

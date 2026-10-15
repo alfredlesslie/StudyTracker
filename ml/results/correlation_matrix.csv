@@ -1,0 +1,9 @@
+,totalStudyMinutes,studyDays,averageQuizScore,previousScore,missedSessions,failures,studyConsistency,finalExamScore
+totalStudyMinutes,1.0,0.985,0.178,0.204,-0.079,-0.142,0.297,0.154
+studyDays,0.985,1.0,0.186,0.213,-0.082,-0.144,0.314,0.164
+averageQuizScore,0.178,0.186,1.0,0.859,-0.089,-0.377,0.106,0.911
+previousScore,0.204,0.213,0.859,1.0,-0.092,-0.374,0.132,0.809
+missedSessions,-0.079,-0.082,-0.089,-0.092,1.0,0.1,-0.862,-0.046
+failures,-0.142,-0.144,-0.377,-0.374,0.1,1.0,-0.129,-0.383
+studyConsistency,0.297,0.314,0.106,0.132,-0.862,-0.129,1.0,0.044
+finalExamScore,0.154,0.164,0.911,0.809,-0.046,-0.383,0.044,1.0

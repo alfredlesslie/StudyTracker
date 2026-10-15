@@ -1,0 +1,12 @@
+feature,importance_or_coefficient,abs_importance
+averageQuizScore,14.9847,14.9847
+studyDays,2.8342,2.8342
+totalStudyMinutes,-2.6935,2.6935
+previousScore,2.4547,2.4547
+studyConsistency,-1.984,1.984
+subject_mathematics,-1.5077,1.5077
+subject_portuguese,1.5077,1.5077
+failures,-0.9476,0.9476
+missedSessions,-0.7217,0.7217
+extraSupport_no,-0.0587,0.0587
+extraSupport_yes,0.0587,0.0587

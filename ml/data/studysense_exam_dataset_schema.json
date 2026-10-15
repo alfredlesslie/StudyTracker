@@ -1,0 +1,105 @@
+{
+  "datasetName": "StudySense AI - Genuine Module-Aware Exam Performance Dataset",
+  "version": "1.0.0",
+  "description": "Standardized schema for collecting authentic student preparation metrics mapped to verified university examination outcomes.",
+  "groundTruthPolicy": "Zero synthetic or fabricated labels. Records are only admitted into training datasets when verified actual exam marks are recorded.",
+  "schema": {
+    "student_id": {
+      "type": "string",
+      "description": "Anonymized unique student identifier"
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "KTU Subject identifier (e.g. cs-cn, cs-se, cs-math, cs-ml)"
+    },
+    "exam_id": {
+      "type": "string",
+      "description": "Unique identifier of the examination instance"
+    },
+    "selected_module_ids": {
+      "type": "array",
+      "items": "string",
+      "description": "List of 1 to 4 syllabus module IDs tested in this exam"
+    },
+    "module_count": {
+      "type": "integer",
+      "description": "Number of modules tested (1, 2, 3, or 4)"
+    },
+    "total_selected_topics": {
+      "type": "integer",
+      "description": "Total syllabus topics within the selected module scope"
+    },
+    "completed_selected_topics": {
+      "type": "integer",
+      "description": "Number of topics learned/mastered strictly in selected modules"
+    },
+    "topic_completion_pct": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 100.0,
+      "description": "Percentage of topics completed in the selected modules"
+    },
+    "total_quiz_attempts": {
+      "type": "integer",
+      "description": "Total quiz attempts completed for topics in selected modules"
+    },
+    "total_quiz_questions": {
+      "type": "integer",
+      "description": "Total quiz questions answered in selected module topics"
+    },
+    "total_quiz_correct": {
+      "type": "integer",
+      "description": "Total quiz questions answered correctly in selected module topics"
+    },
+    "quiz_accuracy_pct": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 100.0,
+      "nullable": true,
+      "description": "Authentic quiz accuracy percentage across selected modules"
+    },
+    "has_quiz_data": {
+      "type": "boolean",
+      "description": "True if student attempted quizzes in the selected modules"
+    },
+    "active_study_minutes": {
+      "type": "integer",
+      "description": "Total logged active study minutes for topics in selected modules"
+    },
+    "study_consistency_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 100.0,
+      "description": "Normalized consistency score based on dedicated study time"
+    },
+    "previous_exam_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 100.0,
+      "nullable": true,
+      "description": "Student's previous actual exam performance in this subject, if available"
+    },
+    "heuristic_readiness_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 100.0,
+      "description": "Calculated 40/35/15/10 preparation baseline estimate"
+    },
+    "actual_exam_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 100.0,
+      "nullable": true,
+      "description": "TARGET VARIABLE: Verified actual exam mark on a 0-100 scale recorded post-exam"
+    },
+    "ground_truth_ready": {
+      "type": "boolean",
+      "description": "True if actual_exam_score is recorded and verified"
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the pre-exam feature snapshot was recorded"
+    }
+  }
+}

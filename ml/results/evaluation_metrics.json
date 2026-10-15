@@ -1,0 +1,145 @@
+{
+  "modelName": "Linear Regression",
+  "modelVersion": "v1.0",
+  "datasetVersion": "2008.1",
+  "trainedAt": "2026-10-08T21:09:23.695270+00:00",
+  "randomState": 42,
+  "dataset": {
+    "name": "UCI Student Performance Data Set",
+    "source": "https://archive.ics.uci.edu/dataset/320/student+performance",
+    "totalSamples": 1044,
+    "trainSamples": 835,
+    "testSamples": 209
+  },
+  "targetVariable": "finalExamScore",
+  "metrics": {
+    "testMae": 4.581,
+    "testRmse": 8.334,
+    "testR2": 0.8203,
+    "cvMaeMean": 4.668,
+    "cvRmseMean": 7.538,
+    "cvR2Mean": 0.8395
+  },
+  "baseline": {
+    "mae": 14.694,
+    "rmse": 19.74,
+    "r2": -0.0082
+  },
+  "allModelsComparison": {
+    "Baseline (Mean)": {
+      "trainMae": 14.016,
+      "trainRmse": 19.211,
+      "trainR2": 0.0,
+      "testMae": 14.694,
+      "testRmse": 19.74,
+      "testR2": -0.0082,
+      "cvMaeMean": 14.016,
+      "cvRmseMean": 19.211,
+      "cvR2Mean": 0.0,
+      "overfitting": "No"
+    },
+    "Linear Regression": {
+      "trainMae": 4.581,
+      "trainRmse": 7.422,
+      "trainR2": 0.8507,
+      "testMae": 4.581,
+      "testRmse": 8.334,
+      "testR2": 0.8203,
+      "cvMaeMean": 4.668,
+      "cvRmseMean": 7.538,
+      "cvR2Mean": 0.8395,
+      "overfitting": "No"
+    },
+    "Decision Tree": {
+      "trainMae": 0.538,
+      "trainRmse": 1.464,
+      "trainR2": 0.9942,
+      "testMae": 5.283,
+      "testRmse": 9.938,
+      "testR2": 0.7445,
+      "cvMaeMean": 5.403,
+      "cvRmseMean": 9.964,
+      "cvR2Mean": 0.7105,
+      "overfitting": "Yes (Train R\u00b2 >> Test R\u00b2)"
+    },
+    "Random Forest": {
+      "trainMae": 1.888,
+      "trainRmse": 2.972,
+      "trainR2": 0.9761,
+      "testMae": 5.019,
+      "testRmse": 8.421,
+      "testR2": 0.8166,
+      "cvMaeMean": 4.531,
+      "cvRmseMean": 7.433,
+      "cvR2Mean": 0.8367,
+      "overfitting": "Yes (Train R\u00b2 >> Test R\u00b2)"
+    }
+  },
+  "errorAnalysis": {
+    "mean_error_bias": -0.162,
+    "mean_absolute_error": 4.581,
+    "std_error": 8.332,
+    "max_overprediction_error": -43.821,
+    "max_underprediction_error": 16.734
+  },
+  "topFeatures": [
+    {
+      "feature": "averageQuizScore",
+      "importance_or_coefficient": 14.9847,
+      "abs_importance": 14.9847
+    },
+    {
+      "feature": "studyDays",
+      "importance_or_coefficient": 2.8342,
+      "abs_importance": 2.8342
+    },
+    {
+      "feature": "totalStudyMinutes",
+      "importance_or_coefficient": -2.6935,
+      "abs_importance": 2.6935
+    },
+    {
+      "feature": "previousScore",
+      "importance_or_coefficient": 2.4547,
+      "abs_importance": 2.4547
+    },
+    {
+      "feature": "studyConsistency",
+      "importance_or_coefficient": -1.984,
+      "abs_importance": 1.984
+    },
+    {
+      "feature": "subject_mathematics",
+      "importance_or_coefficient": -1.5077,
+      "abs_importance": 1.5077
+    },
+    {
+      "feature": "subject_portuguese",
+      "importance_or_coefficient": 1.5077,
+      "abs_importance": 1.5077
+    },
+    {
+      "feature": "failures",
+      "importance_or_coefficient": -0.9476,
+      "abs_importance": 0.9476
+    }
+  ],
+  "subjectPerformance": [
+    {
+      "subject": "mathematics",
+      "sampleCount": 83,
+      "mae": 4.97,
+      "rmse": 9.44,
+      "r2": 0.8269,
+      "dataStatus": "good"
+    },
+    {
+      "subject": "portuguese",
+      "sampleCount": 126,
+      "mae": 4.32,
+      "rmse": 7.51,
+      "r2": 0.8033,
+      "dataStatus": "good"
+    }
+  ]
+}

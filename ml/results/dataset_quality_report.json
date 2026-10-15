@@ -1,0 +1,92 @@
+{
+  "datasetName": "UCI Student Performance Data Set (Benchmark)",
+  "source": "https://archive.ics.uci.edu/dataset/320/student+performance",
+  "totalRecords": 1044,
+  "totalFeatures": 9,
+  "duplicateRecords": 0,
+  "totalMissingValues": 0,
+  "missingValuesPerColumn": {
+    "studentId": 0,
+    "subject": 0,
+    "subjectId": 0,
+    "examId": 0,
+    "studyDays": 0,
+    "totalStudyMinutes": 0,
+    "averageQuizScore": 0,
+    "previousScore": 0,
+    "missedSessions": 0,
+    "failures": 0,
+    "extraSupport": 0,
+    "studyConsistency": 0,
+    "finalExamScore": 0
+  },
+  "targetVariable": "finalExamScore",
+  "targetRange": [
+    0.0,
+    100.0
+  ],
+  "outlierCountsIQR": {
+    "totalStudyMinutes": 224,
+    "studyDays": 224,
+    "averageQuizScore": 20,
+    "previousScore": 1,
+    "missedSessions": 54,
+    "failures": 183,
+    "studyConsistency": 13
+  },
+  "numericalSummary": {
+    "totalStudyMinutes": {
+      "min": 90.0,
+      "max": 720.0,
+      "mean": 241.09,
+      "median": 210.0,
+      "std": 166.78
+    },
+    "studyDays": {
+      "min": 2.0,
+      "max": 6.0,
+      "mean": 3.18,
+      "median": 3.0,
+      "std": 1.19
+    },
+    "averageQuizScore": {
+      "min": 0.0,
+      "max": 95.0,
+      "mean": 56.23,
+      "median": 55.0,
+      "std": 16.43
+    },
+    "previousScore": {
+      "min": 0.0,
+      "max": 95.0,
+      "mean": 56.07,
+      "median": 55.0,
+      "std": 14.92
+    },
+    "missedSessions": {
+      "min": 0.0,
+      "max": 75.0,
+      "mean": 4.43,
+      "median": 2.0,
+      "std": 6.21
+    },
+    "failures": {
+      "min": 0.0,
+      "max": 3.0,
+      "mean": 0.26,
+      "median": 0.0,
+      "std": 0.66
+    },
+    "studyConsistency": {
+      "min": 0.248,
+      "max": 1.0,
+      "mean": 0.86,
+      "median": 0.9,
+      "std": 0.16
+    }
+  },
+  "subjectDistribution": {
+    "portuguese": 649,
+    "mathematics": 395
+  }
+}
